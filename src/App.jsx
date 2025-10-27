@@ -5,6 +5,8 @@ import './App.css'
 import Navigation from './components/navigtion'
 import Home from './components/home'
 import Footer from './components/footer'
+import ManageBooks from './components/ManageBooks'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,10 +22,24 @@ function App() {
   }
   return (
     <>
-      <Navigation/>
-      <div style={homeStyles}>
+    
+    <Router>
+      <Navigation />
+      <Routes>
+        <Route
+          path="/home"
+          element={
+            <div style={homeStyles}>
+              <Home />
+            </div>
+          }
+        />
+        <Route path="/manage-books" element={<ManageBooks />} />
+      </Routes>
+    </Router>
+      {/* <div style={homeStyles}>
              <Home/>
-      </div>
+      </div> */}
       <Footer/>
      
     </>

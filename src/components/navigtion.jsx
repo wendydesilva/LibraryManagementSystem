@@ -1,4 +1,8 @@
 import Logo from '../assets/images/logo.png';
+import ManageBooks from './ManageBooks.jsx';
+import { NavLink } from "react-router-dom";
+
+
 const Navigation = () => {
     const navContentstyles = {
 
@@ -19,10 +23,10 @@ const Navigation = () => {
      </button>
      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
        <div className="navbar-nav" style={navContentstyles}>
-         <a className="nav-link" href="#">Home</a>
-         <a className="nav-link" href="#">Manage Books</a>
-         <a className="nav-link" href="#">Add Book</a>
-         <a className="nav-link" href="#">Explore Books</a>
+            <NavLink className="nav-link" to="/home">Home</NavLink>
+            <NavLink className="nav-link" to="/manage-books">Manage Books</NavLink>
+            <NavLink className="nav-link" to="/add-book">Add Book</NavLink>
+            <NavLink className="nav-link" to="/api-books">Explore Books</NavLink>
        
        </div>
      </div>
