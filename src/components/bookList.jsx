@@ -7,11 +7,9 @@ const BookList = ({books,onLike=f=>f,onRemoveBook=f=>f}) => {
             <tr>
                 <th>Id</th>
             <th>Title</th>
-            <th>Category</th>
             <th>Author</th>
             <th>Number In Stock</th>
-            <th>Price</th>
-            <th>Year</th>           
+          
             </tr>           
         </thead>
         <tbody>

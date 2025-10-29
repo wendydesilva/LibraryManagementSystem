@@ -7,6 +7,7 @@ import Home from './components/home'
 import Footer from './components/footer'
 import ManageBooks from './components/ManageBooks'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AddBook from './components/addBook'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +36,7 @@ function App() {
           }
         />
         <Route path="/manage-books" element={<ManageBooks />} />
+        <Route path="/add-book" element={<AddBook />} />
       </Routes>
     </Router>
       {/* <div style={homeStyles}>
