@@ -1,14 +1,14 @@
 import Book from './book'
-const BookList = ({books,onLike=f=>f,onRemoveBook=f=>f}) => {
+const BookList = ({books,onDelete = (f) => f}) => {
     if(books.length == 0) return <h3>There are no Books</h3>
     return ( <>
-       <table class="table">
+       <table className="table">
         <thead>
             <tr>
-                <th>Id</th>
+              
             <th>Title</th>
             <th>Author</th>
-            <th>Number In Stock</th>
+            <th>Subject</th>
           
             </tr>           
         </thead>
@@ -16,7 +16,7 @@ const BookList = ({books,onLike=f=>f,onRemoveBook=f=>f}) => {
 
               {books.map(bookObj=><Book
                 key={bookObj._id}
-                bookObj={bookObj}
+                bookObj={bookObj} onDelete={onDelete}
               />)}
         </tbody>
        </table>

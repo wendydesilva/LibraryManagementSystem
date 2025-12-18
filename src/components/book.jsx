@@ -1,18 +1,25 @@
+import { useNavigate } from "react-router-dom";
 
+const Book = ({bookObj,onDelete = (f) => f}) => {
 
-const Book = ({bookObj,onLike = f => f, onRemove=f=>f}) => {
+    const navigate = useNavigate();
+    const {_id,title,author,subject} = bookObj;
 
-    const {_id,title,author,numberInStock} = bookObj;
+    const handleEdit = () => {
+    
+       navigate(`/updatebook/${_id}`);
+  };
+
     return ( <tr>
 
-         <td>{_id}</td>
+
          <td>{title}</td>
          <td>{author}</td>
-         <td>{numberInStock}</td>
+         <td>{subject}</td>
 
    
-        <td><button type="button" class="btn btn-danger" onClick=''>Delete</button></td>
-        <td><button type="button" class="btn btn-warning">Edit</button></td>
+        <td><button type="button" className="btn btn-danger" onClick={() => onDelete(bookObj._id)}>Delete</button></td>
+        <td><button type="button" className="btn btn-warning" onClick={handleEdit}>Edit</button></td>
     </tr> );
 }
 export default Book;
