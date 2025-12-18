@@ -13,12 +13,12 @@ const styles = {
     minHeight: '75vh'
   }
 
-const addBook=(title,author,noInStock)=>{
-    const newBook = {id:v4(), title,author, noInStock};
+const addBook=(title,author,subject)=>{
+    const newBook = {id:v4(), title,author, subject};
 
     setBooks([...booksArray,newBook])
   }
-const AddBook = () => {
+const AddBook = ({onAdd}) => {
   let [booksArray, setBooks] = useState(bookService);
   
     return (
@@ -26,7 +26,7 @@ const AddBook = () => {
        
        <h1 style={{textAlign:'center'}}>Add a New Book</h1>
        <div style={styles}>
-            <NewBook onAddBook={addBook}/>
+            <NewBook onAddBook={onAdd}/>
         </div>
         </>
         

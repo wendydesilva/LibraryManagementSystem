@@ -3,13 +3,17 @@ const NewBook = ({onAddBook=f=>f}) => {
 
     const [title, setTitle] = useState("");
     const [author,setAuthor] = useState("");
-    const [noInStock,setnoInStock] = useState("");
+    const [subject,setSubject] = useState("");
     const submitData = (event)=>{
        event.preventDefault() ;
-       onAddBook(title,author,noInStock);
+       onAddBook({
+          title,
+          author,
+          subject,
+});
        setTitle("");
        setAuthor("");
-       setnoInStock("");
+       setSubject("");
     }
 
     const formStyle = {
@@ -36,11 +40,11 @@ const NewBook = ({onAddBook=f=>f}) => {
             />
             <input type="text"
             required 
-            placeholder="No of Books in Stock" 
-            value={noInStock} 
-            onChange={(event)=>setnoInStock(event.target.value)}
+            placeholder="Subject" 
+            value={subject} 
+            onChange={(event)=>setSubject(event.target.value)}
             />
-            <button type="button" class="btn btn-primary">Add Book</button>
+            <button type="submit" class="btn btn-primary">Add Book</button>
         </form>
     </div> );
 }
